@@ -36,11 +36,12 @@ $white-color: #ffffff;
   }
 }
 .block-title {
+  text-align: center;
   &__btn {
     text-decoration: none;
     color: $white-color;
     border: solid $white-color 1px;
     padding: 20px;
-    
+    margin-top: 30px;
   }
 }
