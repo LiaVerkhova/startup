@@ -5,3 +5,32 @@
 @import "base/fonts";
 @import "base/general";
 @import "../blocks/modules";
+
+$white-color: #ffffff;
+
+.page-main {
+  background-image: url(../img/bgmain.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo {
+    font-family: "Montserrat", sans-serif;
+    display: block;
+    color: $white-color;
+  }
+  &-menu {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    &__item {
+      margin-left: 15px;
+      text-decoration: none;
+    }
+  }
+}
+.block-title {
+}
