@@ -7,27 +7,52 @@
 @import "../blocks/modules";
 
 $white-color: #ffffff;
-
+body {
+  margin: 0 auto;
+  font-family: "Roboto Slab", serif;
+}
 .page-main {
+  position: relative;
   background-image: url(../img/bgmain.png);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 768px;
   color: $white-color;
+}
+header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .block-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1147px;
+  margin: 0 auto;
+  padding: 44px;
   &__logo {
     font-family: "Montserrat", sans-serif;
     display: block;
+    font-size: 23px;
+    font-weight: bold;
   }
   &-menu {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
     &__item {
-      margin-left: 15px;
+      padding-left: 39px;
+      letter-spacing: 0.6px;
+      font-size: 17px;
       a {
         text-decoration: none;
         color: $white-color;
@@ -35,13 +60,58 @@ $white-color: #ffffff;
     }
   }
 }
+.wrap {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1147px;
+  margin: 200px auto;
+}
 .block-title {
   text-align: center;
+  &__title {
+    font-size: 49px;
+    text-transform: uppercase;
+  }
   &__btn {
     text-decoration: none;
     color: $white-color;
     border: solid $white-color 1px;
     padding: 20px;
-    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 14px 34px;
+  }
+  &__desc {
+    margin-bottom: 30px;
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    margin-bottom: 58px;
+  }
+}
+.container {
+  margin: 0 auto;
+}
+.container-white {
+  background-color: $white-color;
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+  }
+  &__subtitle {
+    text-align: center;
+  }
+}
+.block-services {
+  display: flex;
+  &__item {
+    flex-basis: 350px;
+    margin-left: 30px;
+  }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
   }
 }
