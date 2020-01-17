@@ -7,6 +7,8 @@
 @import "../blocks/modules";
 
 $white-color: #ffffff;
+$bg-grey: #f8f8f8;
+
 body {
   margin: 0 auto;
   font-family: "Roboto Slab", serif;
@@ -92,15 +94,50 @@ header:after {
 .container {
   margin: 0 auto;
 }
-.container-white {
-  background-color: $white-color;
+.container-title {
+  height: 580px;
+  padding-top: 72px;
   &__title {
+    position: relative;
     text-align: center;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 37px;
+    font-weight: bold;
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      background-color: black;
+      height: 3px;
+      width: 50px;
+      left: 549px;
+      top: 49px;
+    }
   }
   &__subtitle {
     text-align: center;
+    margin-top: 51px;
+    padding-left: 33px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &-menu {
+    display: flex;
+    text-align: center;
+    margin-top: 52px;
+    padding-left: 345px;
+
+    &__item {
+      list-style-type: none;
+      padding-left: 24px;
+      a {
+        text-decoration: none;
+        font-size: 16px;
+      }
+    }
   }
 }
 .block-services {
@@ -113,5 +150,50 @@ header:after {
     text-align: center;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
   }
+  &__desc {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+.page {
+  background-color: $bg-grey;
+  height: 852px;
+}
+
+.block-description {
+  display: flex;
+  margin-top: 48px;
+  &-item {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+.block-team {
+  display: flex;
+  max-width: 1143px;
+  margin-top: 60px;
+  &-item {
+    flex-basis: 279px;
+    &__pic {
+    }
+    &__title {
+      text-align: center;
+      margin-top: 14px;
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    &__subtitle {
+      text-align: center;
+      margin-top: -4px;
+      font-size: 13px;
+    }
+  }
+}
+.page-works {
+  height: 6472px;
 }
