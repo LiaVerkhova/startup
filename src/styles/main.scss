@@ -8,6 +8,49 @@
 
 $white-color: #ffffff;
 $bg-grey: #f8f8f8;
+$accent-red: #c0301c;
+
+@mixin title {
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  padding-left: 37px;
+  font-weight: bold;
+  &::after {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: black;
+    height: 3px;
+    width: 50px;
+    left: 549px;
+    top: 49px;
+  }
+}
+@mixin subtitle {
+  text-align: center;
+  margin-top: 51px;
+  padding-left: 33px;
+  font-size: 16px;
+  line-height: 24px;
+}
+@mixin teamPic {
+  width: 263px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin worksPic {
+  width: 360px;
+  height: 320px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
 
 body {
   margin: 0 auto;
@@ -98,46 +141,10 @@ header:after {
   height: 580px;
   padding-top: 72px;
   &__title {
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Montserrat", sans-serif;
-    font-size: 20px;
-    line-height: 24px;
-    padding-left: 37px;
-    font-weight: bold;
-    &::after {
-      content: " ";
-      position: absolute;
-      display: block;
-      background-color: black;
-      height: 3px;
-      width: 50px;
-      left: 549px;
-      top: 49px;
-    }
+    @include title;
   }
   &__subtitle {
-    text-align: center;
-    margin-top: 51px;
-    padding-left: 33px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-  &-menu {
-    display: flex;
-    text-align: center;
-    margin-top: 52px;
-    padding-left: 345px;
-
-    &__item {
-      list-style-type: none;
-      padding-left: 24px;
-      a {
-        text-decoration: none;
-        font-size: 16px;
-      }
-    }
+    @include subtitle;
   }
 }
 .block-services {
@@ -162,7 +169,16 @@ header:after {
   background-color: $bg-grey;
   height: 852px;
 }
-
+.container-about {
+  height: 580px;
+  padding-top: 72px;
+  &__title {
+    @include title;
+  }
+  &__subtitle {
+    @include subtitle;
+  }
+}
 .block-description {
   display: flex;
   margin-top: 48px;
@@ -177,7 +193,32 @@ header:after {
   margin-top: 60px;
   &-item {
     flex-basis: 279px;
-    &__pic {
+    &__pic1 {
+      background-image: url(../img/team-pic1.png);
+      @include teamPic;
+      position: relative;
+      &-shadow:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(#bbbbbb, 0.5);
+        z-index: 1;
+      }
+    }
+    &__pic2 {
+      background-image: url(../img/team-pic2.png);
+      @include teamPic;
+    }
+    &__pic3 {
+      background-image: url(../img/team-pic3.png);
+      @include teamPic;
+    }
+    &__pic4 {
+      background-image: url(../img/team-pic4.png);
+      @include teamPic;
     }
     &__title {
       text-align: center;
@@ -195,5 +236,188 @@ header:after {
   }
 }
 .page-works {
-  height: 6472px;
+  height: 1385px;
+}
+.container-works {
+  padding-top: 72px;
+  &__title {
+    @include title;
+  }
+  &-menu {
+    display: flex;
+    text-align: center;
+    margin-top: 52px;
+    padding-left: 345px;
+
+    &__item {
+      list-style-type: none;
+      padding-left: 24px;
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+      }
+    }
+  }
+}
+.block-works {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 74px;
+  &__item1 {
+    background-image: url(../img/works1.png);
+    @include worksPic;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(#c0301c, 0.5);
+      z-index: 1;
+    }
+  }
+  &__item2 {
+    background-image: url(../img/works2.png);
+    @include worksPic;
+  }
+  &__item3 {
+    background-image: url(../img/works3.png);
+    @include worksPic;
+  }
+  &__item4 {
+    background-image: url(../img/works4.png);
+    @include worksPic;
+  }
+  &__item5 {
+    background-image: url(../img/works5.png);
+    @include worksPic;
+  }
+  &__item6 {
+    background-image: url(../img/works6.png);
+    @include worksPic;
+  }
+  &__item7 {
+    background-image: url(../img/works7.png);
+    @include worksPic;
+  }
+  &__item8 {
+    background-image: url(../img/works8.png);
+    @include worksPic;
+  }
+  &__item9 {
+    background-image: url(../img/works9.png);
+    @include worksPic;
+  }
+}
+.page-red {
+  height: 370px;
+  background-image: url(../img/bg-red.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.shadow-red {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#c0301c, 0.5);
+    z-index: 1;
+  }
+}
+.block-intouch {
+  position: relative;
+  top: 100px;
+  z-index: 2;
+  text-align: center;
+  color: $white-color;
+  &__text {
+    font-size: 30px;
+    line-height: 16px;
+  }
+  &__btn {
+    color: $white-color;
+    text-decoration: none;
+    border: solid $white-color 1px;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 17px;
+    padding: 14px 34px;
+  }
+}
+.page-blog {
+  height: 1080px;
+}
+.container-blog {
+  margin-top: 90px;
+  &__title {
+    @include title;
+  }
+  &__subtitle {
+    @include subtitle;
+  }
+}
+.block-posts {
+  display: flex;
+  flex-wrap: wrap;
+  &-item {
+    margin-top: 50px;
+    display: flex;
+    flex-basis: 100%;
+    &-text {
+      margin-left: 45px;
+
+      &__title {
+        display: grid;
+        grid-template-areas: "a b" "a c";
+        p {
+          border: 2px solid black;
+          padding: 11px 11px;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-family: "Montserrat", sans-serif;
+          text-align: center;
+          font-size: 22px;
+          grid-area: a;
+        }
+        a {
+          text-decoration: none;
+          color: black;
+          font-family: "Montserrat", sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          text-transform: uppercase;
+          grid-area: b;
+          &:hover {
+            color: $accent-red;
+          }
+        }
+        small {
+          font-size: 13px;
+          grid-area: c;
+        }
+      }
+      &__desc {
+        margin-top: 22px;
+        line-height: 24px;
+        font-size: 14px;
+      }
+      &__btn {
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover {
+          color: $accent-red;
+        }
+      }
+    }
+  }
 }
