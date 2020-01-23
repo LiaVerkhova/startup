@@ -19,6 +19,7 @@ $accent-red: #c0301c;
   line-height: 24px;
   padding-left: 37px;
   font-weight: bold;
+
   &::after {
     content: " ";
     position: absolute;
@@ -43,6 +44,15 @@ $accent-red: #c0301c;
   background-repeat: no-repeat;
   background-size: cover;
 }
+@mixin teamPicShadow {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(#bbbbbb, 0.5);
+}
 @mixin worksPic {
   width: 360px;
   height: 320px;
@@ -58,8 +68,7 @@ $accent-red: #c0301c;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(#c0301c, 0.5);
-  z-index: 1;
+  background: rgba(192, 48, 28, 0.5);
 }
 
 body {
@@ -210,32 +219,44 @@ header:after {
   margin-top: 60px;
   &-item {
     flex-basis: 279px;
+    &__shadow {
+      @include teamPicShadow;
+      display: none;
+    }
+    &__social {
+      position: relative;
+    }
     &__pic1 {
       background-image: url(../img/team-pic1.png);
       @include teamPic;
       position: relative;
-      &-shadow:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(#bbbbbb, 0.5);
-        z-index: 1;
+      &:hover div {
+        display: block;
       }
     }
     &__pic2 {
       background-image: url(../img/team-pic2.png);
       @include teamPic;
+      position: relative;
+      &:hover div {
+        display: block;
+      }
     }
     &__pic3 {
       background-image: url(../img/team-pic3.png);
       @include teamPic;
+      position: relative;
+      &:hover div {
+        display: block;
+      }
     }
     &__pic4 {
       background-image: url(../img/team-pic4.png);
       @include teamPic;
+      position: relative;
+      &:hover div {
+        display: block;
+      }
     }
     &__title {
       text-align: center;
@@ -282,88 +303,149 @@ header:after {
   flex-wrap: wrap;
   margin-top: 74px;
   &__transperent {
-    &:hover {
-      @include workPicTransperent;
+    @include workPicTransperent;
+    display: none;
+  }
+  &__text {
+    display: flex;
+    color: $white-color;
+    text-align: center;
+    margin-top: 100px;
+    z-index: 2;
+
+    &-title {
+      font-size: 18px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+    }
+    &-subtitle {
+      font-size: 12px;
+      margin-bottom: 42px;
+    }
+    &-btn {
+      text-decoration: none;
+      color: rgba(192, 48, 28, 0.5);
+      background-color: $white-color;
+      padding: 8px 22px;
     }
   }
+
   &__item1 {
     background-image: url(../img/works1.png);
     @include worksPic;
     position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item2 {
     background-image: url(../img/works2.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item3 {
     background-image: url(../img/works3.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item4 {
     background-image: url(../img/works4.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item5 {
     background-image: url(../img/works5.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item6 {
     background-image: url(../img/works6.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item7 {
     background-image: url(../img/works7.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item8 {
     background-image: url(../img/works8.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
   &__item9 {
     background-image: url(../img/works9.png);
     @include worksPic;
+    position: relative;
+    &:hover div {
+      display: block;
+    }
   }
 }
-
 .page-red {
-  height: 370px;
   background-image: url(../img/bg-red.png);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 370px;
   position: relative;
-}
-.shadow-red {
-  &:after {
-    content: "";
+  &__shadow::after {
+    content: " ";
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
-    background: rgba(#c0301c, 0.5);
+    right: 0;
+    background: rgba(192, 48, 28, 0.5);
     z-index: 1;
   }
 }
 .block-intouch {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   position: relative;
-  top: 100px;
   z-index: 2;
-  text-align: center;
+  height: 370px;
   color: $white-color;
-  &__text {
+  align-items: center;
+  align-content: center;
+  p {
+    margin: 0 auto 10px;
     font-size: 30px;
-    line-height: 16px;
   }
-  &__btn {
-    color: $white-color;
+
+  a {
     text-decoration: none;
-    border: solid $white-color 1px;
-    padding: 20px;
+    color: $white-color;
     text-transform: uppercase;
-    font-size: 17px;
-    padding: 14px 34px;
+    border: 2px solid $white-color;
+    font-size: 18px;
+    padding: 13px 25px;
+    margin-top: 36px;
   }
 }
+
 .page-blog {
   height: 1080px;
 }
