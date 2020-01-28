@@ -9,6 +9,7 @@
 $white-color: #ffffff;
 $bg-grey: #f8f8f8;
 $accent-red: #c0301c;
+$grey-dots: #dddddd;
 
 @mixin title {
   position: relative;
@@ -146,11 +147,11 @@ header:after {
   &__btn {
     text-decoration: none;
     color: $white-color;
-    border: solid $white-color 1px;
+    border: solid $white-color 2px;
     padding: 20px;
     text-transform: uppercase;
     font-size: 17px;
-    padding: 14px 34px;
+    padding: 12px 30px;
   }
   &__desc {
     margin-bottom: 30px;
@@ -174,6 +175,7 @@ header:after {
 }
 .block-services {
   display: flex;
+  margin-top: 67px;
   &__item {
     flex-basis: 350px;
     margin-left: 30px;
@@ -184,11 +186,53 @@ header:after {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: bold;
+    margin-top: 28px;
   }
   &__desc {
     font-size: 14px;
     line-height: 24px;
     text-align: center;
+  }
+  &__svg {
+    display: flex;
+    justify-content: center;
+    .circle {
+      width: 86px;
+      height: 86px;
+      border-radius: 100%;
+      border: 2px solid #dddddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p {
+        font-family: "Roboto Slab", serif;
+        font-size: 40px;
+        font-weight: bold;
+        color: $accent-red;
+      }
+      svg#closetag {
+        width: 48px;
+        fill: $accent-red;
+      }
+      svg#lifebouy {
+        width: 48px;
+        fill: $accent-red;
+      }
+    }
+    .circle:hover {
+      background: $accent-red;
+      p {
+        color: $white-color;
+      }
+      svg#closetag {
+        width: 48px;
+        fill: $white-color;
+      }
+      svg#lifebouy {
+        width: 48px;
+        fill: $white-color;
+      }
+    }
   }
 }
 .page {
@@ -294,6 +338,9 @@ header:after {
         text-decoration: none;
         font-size: 16px;
         color: black;
+      }
+      a:hover {
+        color: $accent-red;
       }
     }
   }
@@ -515,5 +562,122 @@ header:after {
         }
       }
     }
+  }
+}
+.page-grey {
+  height: 480px;
+  background-color: $bg-grey;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 900px;
+    padding-top: 100px;
+    padding-left: 78px;
+  }
+  &__slider {
+    text-align: center;
+    margin: 52px auto 0;
+    &-text {
+      font-size: 18px;
+      line-height: 13px;
+    }
+    &-tx {
+      margin-top: 42px;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+  }
+}
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  & > li {
+    list-style-type: none;
+    margin: 0 5px;
+    & > button {
+      text-indent: -9999px;
+      width: 13px;
+      height: 13px;
+      border: none;
+      border-radius: 100%;
+      background-color: $grey-dots;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    & > button:hover {
+      background-color: $accent-red;
+    }
+  }
+}
+.page-form {
+  height: 665px;
+}
+.block-form {
+  &__title {
+    margin-top: 94px;
+    @include title;
+  }
+  &__subtitle {
+    @include subtitle;
+  }
+  &-box {
+    display: flex;
+    width: 1130px;
+    &-item {
+      .title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        &-address::before {
+          content: url(../img/address.svg);
+          width: 12px;
+          height: 17px;
+        }
+      }
+    }
+  }
+}
+footer {
+  height: 307px;
+  background-color: $accent-red;
+}
+.block-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 286px;
+  &__socials {
+    display: flex;
+
+    svg {
+      width: 17px;
+      height: 18px;
+      fill: $white-color;
+      border: 2px solid $white-color;
+      border-radius: 100%;
+      padding: 7px;
+      margin-left: 14px;
+    }
+  }
+  &__text {
+    p {
+      color: $white-color;
+      text-transform: uppercase;
+      position: relative;
+    }
+  }
+  &__text::before {
+    content: " ";
+    position: absolute;
+    display: block;
+    background-color: $white-color;
+    height: 3px;
+    width: 50px;
+    
   }
 }
