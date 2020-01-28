@@ -646,13 +646,10 @@ footer {
   background-color: $accent-red;
 }
 .block-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 286px;
   &__socials {
     display: flex;
+    padding-left: 454px;
+    padding-top: 100px;
 
     svg {
       width: 17px;
@@ -665,10 +662,13 @@ footer {
     }
   }
   &__text {
+    padding-left: 420px;
+    padding-top: 49px;
     p {
       color: $white-color;
       text-transform: uppercase;
       position: relative;
+      font-size: 12px;
     }
   }
   &__text::before {
@@ -678,6 +678,6 @@ footer {
     background-color: $white-color;
     height: 3px;
     width: 50px;
-    
+    left: 655px;
   }
 }
