@@ -625,6 +625,11 @@ header:after {
     }
   }
 }
+.slick-slide {
+  &:focus {
+    outline: none;
+  }
+}
 .page-form {
   height: 665px;
 }
@@ -704,6 +709,10 @@ header:after {
       text-transform: uppercase;
       font-size: 12px;
       padding-left: 15px;
+      &:focus {
+        border: 2px solid $accent-red;
+        outline: none;
+      }
     }
 
     &__area {
@@ -714,6 +723,10 @@ header:after {
       font-size: 12px;
       padding-top: 13px;
       padding-left: 15px;
+      &:focus {
+        border: 2px solid $accent-red;
+        outline: none;
+      }
     }
     &__btn {
       width: 171px;
@@ -722,6 +735,12 @@ header:after {
       background-color: #fff;
       border: 1px solid hsl(0, 0%, 33%);
       font-size: 13px;
+      &:focus {
+        border: 2px solid $accent-red;
+        outline: none;
+        color: $accent-red;
+        font-weight: bold;
+      }
     }
   }
 }
