@@ -265,6 +265,7 @@ header:after {
   }
 }
 .block-team {
+  position: relative;
   display: flex;
   max-width: 1143px;
   margin-top: 60px;
@@ -275,7 +276,7 @@ header:after {
       display: none;
     }
     &__social {
-      position: relative;
+      position: absolute;
     }
     &__pic1 {
       background-image: url(../img/team-pic1.png);
@@ -322,6 +323,66 @@ header:after {
       margin-top: -4px;
       font-size: 13px;
     }
+  }
+  .block-social {
+    display: flex;
+    justify-content: center;
+    width: 263px;
+    padding-top: 200px;
+    li {
+      list-style-type: none;
+      padding-left: 20px;
+      :hover {
+        width: 35px;
+        height: 25px;
+        background-color: $accent-red;
+      }
+    }
+    &-icon {
+      width: 20px;
+      height: 25px;
+      color: $white-color;
+      text-align: center;
+      align-self: center;
+      padding-top: 10px;
+    }
+  }
+  .slick-arrow {
+    position: absolute;
+    top: 33%;
+    z-index: 10;
+    width: 35px;
+    height: 38px;
+    border: none;
+    font-size: 0;
+    &:hover {
+      background: $accent-red;
+    }
+  }
+  .slick-next {
+    left: 0;
+    font-size: 0;
+    background-image: url(../img/arrow_next.svg);
+    color: white;
+  }
+  .slick-prev {
+    right: 0;
+    font-size: 0;
+    background-image: url(../img/arrow_prev.svg);
+    color: white;
+  }
+}
+.prev_arrow {
+  position: absolute;
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+.next_arrow {
+  img {
+    width: 25px;
+    height: 25px;
   }
 }
 .page-works {
@@ -600,36 +661,37 @@ header:after {
       font-size: 18px;
     }
   }
-}
-.slick-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-  & > li {
-    list-style-type: none;
-    margin: 0 5px;
-    & > button {
-      text-indent: -9999px;
-      width: 13px;
-      height: 13px;
-      border: none;
-      border-radius: 100%;
-      background-color: $grey-dots;
-      cursor: pointer;
-      &:focus {
-        outline: none;
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    & > li {
+      list-style-type: none;
+      margin: 0 5px;
+      & > button {
+        text-indent: -9999px;
+        width: 13px;
+        height: 13px;
+        border: none;
+        border-radius: 100%;
+        background-color: $grey-dots;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+      & > button:hover {
+        background-color: $accent-red;
       }
     }
-    & > button:hover {
-      background-color: $accent-red;
+  }
+  .slick-slide {
+    &:focus {
+      outline: none;
     }
   }
 }
-.slick-slide {
-  &:focus {
-    outline: none;
-  }
-}
+
 .page-form {
   height: 665px;
 }
