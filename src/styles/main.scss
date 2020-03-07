@@ -30,6 +30,9 @@ $grey-dots: #dddddd;
     width: 50px;
     left: 549px;
     top: 49px;
+    @media (max-width: 1200px) {
+      left: 460px;
+    }
   }
 }
 @mixin subtitle {
@@ -44,6 +47,10 @@ $grey-dots: #dddddd;
   height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: 1200px) {
+    width: 226px;
+    height: 220px;
+  }
 }
 @mixin teamPicShadow {
   content: "";
@@ -61,6 +68,10 @@ $grey-dots: #dddddd;
   background-size: cover;
   margin-left: 10px;
   margin-bottom: 10px;
+  @media (max-width: 1200px) {
+    width: 285px;
+    height: 285px;
+  }
 }
 @mixin workPicTransperent {
   content: "";
@@ -90,6 +101,9 @@ body {
   background-size: cover;
   height: 768px;
   color: $white-color;
+  @media (max-width: 1024px) {
+    height: 600px;
+  }
 }
 header:after {
   content: "";
@@ -111,6 +125,13 @@ header:after {
   max-width: 1147px;
   margin: 0 auto;
   padding: 44px;
+  @media (max-width: 1200px) {
+    max-width: 1045px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 900px;
+  }
+
   &__logo {
     font-family: "Montserrat", sans-serif;
     display: block;
@@ -125,6 +146,9 @@ header:after {
       padding-left: 39px;
       letter-spacing: 0.6px;
       font-size: 17px;
+      @media (max-width: 1024px) {
+        padding-left: 22px;
+      }
       a {
         text-decoration: none;
         color: $white-color;
@@ -142,6 +166,9 @@ header:after {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1024px) {
+    height: 450px;
+  }
 }
 .block-title {
   text-align: center;
@@ -173,6 +200,10 @@ header:after {
 .container-title {
   height: 580px;
   padding-top: 72px;
+  @media (max-width: 1024px) {
+    padding-top: 60px;
+    height: 545px;
+  }
   &__title {
     @include title;
   }
@@ -211,6 +242,10 @@ header:after {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 1024px) {
+        width: 70px;
+        height: 70px;
+      }
       p {
         font-family: "Roboto Slab", serif;
         font-size: 40px;
@@ -245,10 +280,16 @@ header:after {
 .page {
   background-color: $bg-grey;
   height: 852px;
+  @media (max-width: 1024px) {
+    height: 800px;
+  }
 }
 .container-about {
   height: 580px;
   padding-top: 72px;
+  @media (max-width: 1024px) {
+    padding-top: 50px;
+  }
   &__title {
     @include title;
   }
@@ -259,9 +300,15 @@ header:after {
 .block-description {
   display: flex;
   margin-top: 48px;
+  @media (max-width: 1200px) {
+    justify-content: space-between;
+  }
   &-item {
     font-size: 14px;
     line-height: 24px;
+    @media (max-width: 1200px) {
+      padding-left: 16px;
+    }
   }
 }
 .block-team {
@@ -270,6 +317,7 @@ header:after {
   max-width: 1143px;
   margin-top: 60px;
   &-item {
+    position: relative;
     flex-basis: 279px;
     &__shadow {
       @include teamPicShadow;
@@ -375,18 +423,43 @@ header:after {
 .prev_arrow {
   position: absolute;
   img {
+    position: absolute;
+    top: -206px;
+    left: 1071px;
     width: 25px;
     height: 25px;
+    @media (max-width: 1200px) {
+      left: 900px;
+    }
+  }
+  :hover {
+    width: 25px;
+    height: 30px;
+    background-color: $accent-red;
   }
 }
 .next_arrow {
+  position: absolute;
   img {
+    position: absolute;
     width: 25px;
     height: 25px;
+    top: -206px;
+  }
+  :hover {
+    width: 25px;
+    height: 30px;
+    background-color: $accent-red;
   }
 }
 .page-works {
   height: 1385px;
+  @media (max-width: 1200px) {
+    height: 1295px;
+  }
+  @media (max-width: 1024px) {
+    height: 1240px;
+  }
 }
 .container-works {
   padding-top: 72px;
@@ -398,6 +471,9 @@ header:after {
     text-align: center;
     margin-top: 52px;
     padding-left: 345px;
+    @media (max-width: 1200px) {
+      padding-left: 280px;
+    }
 
     &__item {
       list-style-type: none;
@@ -524,6 +600,9 @@ header:after {
   background-size: cover;
   height: 370px;
   position: relative;
+  @media (max-width: 1024px) {
+    height: 280px;
+  }
   &__shadow::after {
     content: " ";
     position: absolute;
@@ -545,6 +624,9 @@ header:after {
   color: $white-color;
   align-items: center;
   align-content: center;
+  @media (max-width: 1024px) {
+    height: 280px;
+  }
   p {
     margin: 0 auto 10px;
     font-size: 30px;
@@ -563,9 +645,15 @@ header:after {
 
 .page-blog {
   height: 1080px;
+  @media (max-width: 1200px) {
+    height: 970px;
+  }
 }
 .container-blog {
   margin-top: 90px;
+  @media (max-width: 1024px) {
+    margin-top: 70px;
+  }
   &__title {
     @include title;
   }
@@ -640,6 +728,9 @@ header:after {
 .page-grey {
   height: 480px;
   background-color: $bg-grey;
+  @media (max-width: 1024px) {
+    height: 370px;
+  }
   &__top {
     display: flex;
     align-items: center;
@@ -647,10 +738,22 @@ header:after {
     width: 900px;
     padding-top: 100px;
     padding-left: 78px;
+    @media (max-width: 1200px) {
+      width: 800px;
+    }
+    @media (max-width: 1024px) {
+      padding-top: 50px;
+    }
   }
   &__slider {
     text-align: center;
     margin: 52px auto 0;
+    @media (max-width: 1200px) {
+      padding-left: 28px;
+    }
+    @media (max-width: 1024px) {
+      padding-left: 40px;
+    }
     &-text {
       font-size: 18px;
       line-height: 13px;
@@ -665,6 +768,9 @@ header:after {
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    @media (max-width: 1024px) {
+      padding-left: 8px;
+    }
     & > li {
       list-style-type: none;
       margin: 0 5px;
@@ -694,11 +800,17 @@ header:after {
 
 .page-form {
   height: 665px;
+  @media (max-width: 1200px) {
+    height: 710px;
+  }
 }
 .block-form {
   &__title {
     margin-top: 94px;
     @include title;
+    @media (max-width: 1024px) {
+      margin-top: 70px;
+    }
   }
   &__subtitle {
     @include subtitle;
@@ -708,38 +820,66 @@ header:after {
     justify-content: space-between;
     margin-top: 67px;
     width: 1128px;
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
   }
 }
 .box {
   width: 210px;
   height: 265px;
+  @media (max-width: 1200px) {
+    height: 170px;
+  }
 
   &-item {
     font-size: 12px;
     line-height: 6px;
+    @media (max-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+      width: 785px;
+      padding-left: 90px;
+    }
+    @media (max-width: 1200px) {
+      width: 710px;
+      padding-left: 140px;
+    }
+    @media (max-width: 1024px) {
+      padding-left: 115px;
+    }
     &__adress {
+      position: relative;
       padding-bottom: 18px;
       &-title {
         @include boxItemTitle;
       }
-
-      &__address::before {
-        content: url(../img/address.svg);
-        width: 12px;
-        height: 17px;
-      }
+    }
+    &__location {
+      position: absolute;
+      left: -24px;
     }
     &__hotline {
+      position: relative;
       padding-bottom: 18px;
       &-title {
         @include boxItemTitle;
       }
     }
+    &__mobile {
+      position: absolute;
+      left: -24px;
+    }
     &__email {
+      position: relative;
       padding-bottom: 18px;
       &-title {
         @include boxItemTitle;
       }
+    }
+    &__envelope {
+      position: absolute;
+      left: -24px;
     }
   }
 }
@@ -749,15 +889,28 @@ header:after {
   align-content: space-between;
   width: 730px;
   height: 319px;
+  @media (max-width: 1200px) {
+    width: 915px;
+    padding-left: 30px;
+  }
 
   &-detail {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media (max-width: 1024px) {
+      max-width: 900px;
+    }
     small {
       padding-right: 179px;
       padding-top: 16px;
       font-size: 12px;
+      @media (max-width: 1200px) {
+        padding-right: 395px;
+      }
+      @media (max-width: 1024px) {
+        padding-right: 375px;
+      }
     }
     small::before {
       content: "*";
@@ -774,6 +927,9 @@ header:after {
       &:focus {
         border: 2px solid $accent-red;
         outline: none;
+      }
+      @media (max-width: 1200px) {
+        width: 420px;
       }
     }
 
@@ -809,6 +965,9 @@ header:after {
 footer {
   height: 307px;
   background-color: $accent-red;
+  @media (max-width: 1024px) {
+    height: 220px;
+  }
 }
 .block-footer {
   display: flex;
@@ -817,6 +976,9 @@ footer {
   justify-content: center;
   text-align: center;
   height: 307px;
+  @media (max-width: 1024px) {
+    height: 220px;
+  }
 
   &__socials {
     display: flex;
@@ -850,5 +1012,11 @@ footer {
     height: 2px;
     width: 50px;
     left: 656px;
+    @media (max-width: 1200px) {
+      left: 537px;
+    }
+    @media (max-width: 1024px) {
+      left: 490px;
+    }
   }
 }

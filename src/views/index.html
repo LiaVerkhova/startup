@@ -397,6 +397,7 @@
             <p class="block-team-item__subtitle">Front-end Developer</p>
           </div>
         </div>
+
         <div class="prev_arrow">
           <span><img src="../img/arrow_prev.svg" alt=""/></span>
         </div>
@@ -409,14 +410,24 @@
       <div class="container container-works">
         <p class="container-works__title">Latest Works</p>
         <ul class="container-works-menu">
-          <li class="container-works-menu__item"><a href="">All</a></li>
-          <li class="container-works-menu__item"><a href="">Branding </a></li>
-          <li class="container-works-menu__item"><a href="">Design</a></li>
-          <li class="container-works-menu__item"><a href="">Development</a></li>
-          <li class="container-works-menu__item"><a href="">Strategy</a></li>
+          <li class="container-works-menu__item">
+            <a class="f-all" href="">All</a>
+          </li>
+          <li class="container-works-menu__item f-brand">
+            <a href="">Branding </a>
+          </li>
+          <li class="container-works-menu__item">
+            <a class="f-design" href="">Design</a>
+          </li>
+          <li class="container-works-menu__item">
+            <a class="f-dev" href="">Development</a>
+          </li>
+          <li class="container-works-menu__item">
+            <a class="f-strat" href="">Strategy</a>
+          </li>
         </ul>
         <div class="block-works">
-          <div class="block-works__item1">
+          <div class="block-works__item1 strat">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -425,7 +436,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item2">
+          <div class="block-works__item2 design">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -434,7 +445,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item3">
+          <div class="block-works__item3 dev">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -443,7 +454,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item4">
+          <div class="block-works__item4 brand">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -452,7 +463,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item5">
+          <div class="block-works__item5 strat">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -461,7 +472,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item6">
+          <div class="block-works__item6 dev">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -470,7 +481,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item7">
+          <div class="block-works__item7 design">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -488,7 +499,7 @@
               </div>
             </div>
           </div>
-          <div class="block-works__item9">
+          <div class="block-works__item9 strat">
             <div class="block-works__transperent">
               <div class="block-works__text">
                 <p class="block-works__text-title">Hair Dresser</p>
@@ -685,16 +696,19 @@
           <div class="box">
             <div class="box-item">
               <div class="box-item__adress">
+                <i class="fas fa-map-marker-alt box-item__location"></i>
                 <p class="box-item__adress-title">Address</p>
                 <p>312, 7th Ave, New York</p>
                 <p>NY 101200, United States of America</p>
               </div>
               <div class="box-item__hotline">
+                <i class="fas fa-mobile-alt box-item__mobile"></i>
                 <p class="box-item__hotline-title">Hotline (24x7)</p>
                 <p>+65 0052 300, +65 88251 210</p>
                 <p>+88 01723 511 340</p>
               </div>
               <div class="box-item__email">
+                <i class="far fa-envelope box-item__envelope"></i>
                 <p class="box-item__email-title">E-mail</p>
                 <p>shapedtheme@gmail.com</p>
                 <p>khalilkode@gmail.com</p>
@@ -782,11 +796,9 @@
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script>
-      $(document).ready(function() {
-        $(".page-grey__slider").slick({
-          dots: true,
-          arrows: false
-        });
+      $(".page-grey__slider").slick({
+        dots: true,
+        arrows: false
       });
     </script>
     <script>
@@ -824,6 +836,40 @@
             }
           }
         ]
+      });
+    </script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script type="text/javascript">
+      var fActive = "";
+
+      function filterColor(color) {
+        if (fActive != color) {
+          $("div")
+            .filter("." + color)
+            .slideDown();
+          $("div")
+            .filter(":not(." + color + ")")
+            .slideUp();
+          fActive = color;
+        }
+      }
+
+      $(".f-brand").click(function() {
+        filterColor("brand");
+      });
+      $(".f-design").click(function() {
+        filterColor("design");
+      });
+      $(".f-dev").click(function() {
+        filterColor("dev");
+      });
+      $(".f-strat").click(function() {
+        filterColor("strat");
+      });
+
+      $(".f-all").click(function() {
+        $("div").slideDown();
+        fActive = "all";
       });
     </script>
   </body>
